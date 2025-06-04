@@ -1,36 +1,27 @@
 # STaR2025
 
-This repository contains the supplemental material for the paper:
+This repository contains the supplemental material for the anonymous submission:
 
 **STaR: A Self-Triggered Retrieval-Enhanced Framework for Cost-Efficient Generation with LLMs**
 
 ## Overview
 
-STaR is a plug-and-play framework designed to enhance large language model (LLM) generation through dynamic, cost-aware retrieval. It features a lightweight, prompt-level pipeline for self-triggered decision-making, query construction, and evidence integration.
+STaR is a lightweight, plug-and-play framework that enhances large language model (LLM) generation through dynamic, cost-aware retrieval scheduling. It introduces prompt-level mechanisms for information need assessment, query formulation, and structured evidence integration, all without requiring model fine-tuning.
 
-The framework does not require model fine-tuning and is compatible with various black-box LLM APIs.
+## Current Status
 
-## Repository Structure
+To preserve the anonymity of the review process, core code is currently withheld. Full source code and implementation details will be released in this repository **after the review phase concludes**.
 
-- Scripts for launching experiments
-- Configuration files for different datasets
-- Documentation and instructions for reproducing results
+## Repository Structure (planned)
 
-## Supported Benchmarks
-
-Experiments are conducted on the following datasets:
-- 2WikiMultihopQA
-- HotpotQA
-- StrategyQA
-- IIRC
+- Experiment scripts and configuration files  
+- Dataset setup instructions (for 2WikiMultihopQA, HotpotQA, StrategyQA, IIRC)  
+- Reproducibility guidance and environment notes  
 
 ## Reproducibility
 
-To ensure reproducibility:
-- All evaluation scripts, configurations, and required components are included.
-- Results reported in the paper can be reproduced using the provided materials.
-- No fine-tuning is necessary; experiments rely on publicly available quantized LLM models.
+This repository will support full reproduction of the results reported in the paper, using publicly available quantized LLM models (e.g., LLaMA2-7B/13B, 4-bit). No fine-tuning is required.
 
-## Contact
+## Notice
 
-This repository is part of an anonymous submission. All materials are provided solely for review purposes.
+This repository is shared solely for the purpose of anonymous peer review. Please check back after the review process for a complete release.
