@@ -17,23 +17,13 @@ nlp = spacy.load("en_core_web_sm")
 
 
 class BasicGenerator:
-    def __i            for i in range(tl, tr):
-                att = attns[i - tl]
-                w = weight[i]
-                cent = centralities[i] if i < len(centralities) else 0.0
-
-                UA = att * w * length_factor
-                structural_edge = 1.0 - cent * self.centrality_weight
-
-                if self.halluc_f1 == True:
-                    score = (UA * structural_edge) / (UA + structural_edge + eps)
-                else:
-                    score = UA * structural_edgeel_name_or_path):
+    def __init__(self, model_name_or_path):
+        # 使用 4bit 量化加载模型，节省内存和计算资源
         logger.info(f"Loading model with 4bit quantization from {model_name_or_path}")
         quantization_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_use_double_quant=True,
+            load_in_4bit=True,                
+            bnb_4bit_quant_type="nf4",        
+            bnb_4bit_use_double_quant=True,   
             bnb_4bit_compute_dtype=torch.float16
         )
 
@@ -64,7 +54,7 @@ class BasicGenerator:
         input_length = input_ids.shape[1]
         attention_mask = torch.ones_like(input_ids)
 
-        temperature = 1.0
+        temperature = 0.3
         top_p = 1.0
         top_k = 50
         if return_logprobs:
@@ -112,7 +102,7 @@ class BasicGenerator:
         input_length = input_ids.shape[1]
         attention_mask = torch.ones_like(input_ids)
 
-        temperature = 1.0
+        temperature = 0.3
         top_p = 1.0
         top_k = 50
 
